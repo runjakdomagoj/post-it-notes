@@ -1,0 +1,62 @@
+.notes {
+   display: flex;
+   flex-direction: row;
+   gap: 40px;
+   flex-wrap: wrap;
+   justify-content: center;
+   text-align: center;
+   margin-top: 50px;
+   color: #00040a;
+}
+
+.notes h2 {
+   text-transform: uppercase;
+   font-weight: 900;
+}
+
+.note {
+   background-color: #ffd52e;
+   width: 330px;
+   height: 330px;
+   box-shadow: #b06f00 1px 5px 10px;
+   overflow-wrap: break-word;
+   border-radius: 10px;
+}
+
+.icons {
+   display: flex;
+   flex-direction: row;
+}
+
+.icon {
+   cursor: pointer;
+   border: 1px solid #00040a;
+   padding: 3px;
+   margin: 8px;
+   border-radius: 5px;
+}
+
+.icon:hover {
+   background-color: red;
+   border: 1px solid red;
+   color: #f9f9f9;
+}
+
+hr {
+   border: 1px solid #ffea97;
+}
+
+.text {
+   width: 200px;
+   height: 100px;
+   background-color: #ffd52e;
+   resize: none;
+   border: none;
+   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+   text-align: center;
+}
+
+.text:hover,
+.text:focus {
+   outline: 1px solid #ffea97;
+}
