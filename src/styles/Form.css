@@ -59,3 +59,81 @@
 .form textarea:focus {
    outline: 1px solid #03142c;
 }
+
+@media only screen and (max-width: 769px) {
+   .form {
+      width: 400px;
+      height: 350px;
+   }
+
+   .form h2 {
+      font-size: 22px;
+   }
+
+   .form button {
+      width: 120px;
+      height: 40px;
+   }
+
+   .form textarea {
+      width: 350px;
+   }
+}
+
+@media only screen and (max-width: 521px) {
+   .form {
+      width: 320px;
+      height: 270px;
+      padding: 10px 30px;
+      margin-top: 30px;
+   }
+
+   .form h2 {
+      font-size: 18px;
+   }
+
+   .form button {
+      width: 100px;
+      height: 40px;
+      font-size: 12px;
+   }
+
+   .form textarea {
+      width: 250px;
+      height: 120px;
+      font-size: 11px;
+   }
+
+   .form textarea::placeholder {
+      font-size: 11px;
+   }
+}
+
+@media only screen and (max-width: 421px) {
+   .form {
+      width: 270px;
+      height: 220px;
+      padding: 5px 20px;
+      margin-top: 30px;
+   }
+
+   .form h2 {
+      font-size: 16px;
+   }
+
+   .form button {
+      width: 80px;
+      height: 20px;
+      font-size: 10px;
+   }
+
+   .form textarea {
+      width: 200px;
+      height: 90px;
+      font-size: 10px;
+   }
+
+   .form textarea::placeholder {
+      font-size: 10px;
+   }
+}

@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { useState } from "react";
 import "../styles/Note.css";
 import CloseIcon from "@mui/icons-material/Close";
 import EditIcon from "@mui/icons-material/Edit";
@@ -51,9 +51,7 @@ const Note = ({ notes, setNotes }) => {
                </div>
                <hr />
                <h2>Note</h2>
-               {!(noteEditItem?.id === note.id) && (
-                  <Fragment>{note.name}</Fragment>
-               )}
+               {!(noteEditItem?.id === note.id) && <p>{note.name}</p>}
                {noteEditItem?.id === note.id && (
                   <textarea
                      className="text"
