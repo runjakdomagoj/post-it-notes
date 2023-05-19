@@ -3,9 +3,12 @@ import "../styles/Note.css";
 import CloseIcon from "@mui/icons-material/Close";
 import EditIcon from "@mui/icons-material/Edit";
 import DoneIcon from "@mui/icons-material/Done";
+import Colors from "./Colors";
 
-const Note = ({ notes, setNotes }) => {
+const Note = ({ note, notes, setNotes }) => {
    const [noteEditItem, setNoteEditItem] = useState(null);
+
+   const [colorClass, setColorClass] = useState("yellow-note");
 
    const onDelete = (id) => {
       setNotes((notes) => notes.filter((note) => note.id !== id));
@@ -33,34 +36,32 @@ const Note = ({ notes, setNotes }) => {
    };
 
    return (
-      <div className="notes">
-         {notes.map((note) => (
-            <div className="note" key={note.id}>
-               <div className="icons">
-                  <CloseIcon
-                     onClick={() => onDelete(note.id)}
-                     className="icon"
-                  />
+      <div className={colorClass} key={note.id}>
+         <div className="icons">
+            <div className="left-side-icons">
+               <CloseIcon onClick={() => onDelete(note.id)} className="icon" />
 
-                  {!(noteEditItem?.id === note.id) && (
-                     <EditIcon onClick={() => onEdit(note)} className="icon" />
-                  )}
-                  {noteEditItem?.id === note.id && (
-                     <DoneIcon onClick={() => onDoneEdit()} className="icon" />
-                  )}
-               </div>
-               <hr />
-               <h2>Note</h2>
-               {!(noteEditItem?.id === note.id) && <p>{note.name}</p>}
+               {!(noteEditItem?.id === note.id) && (
+                  <EditIcon onClick={() => onEdit(note)} className="icon" />
+               )}
                {noteEditItem?.id === note.id && (
-                  <textarea
-                     className="text"
-                     value={noteEditItem.name}
-                     onChange={noteEditItemNameChangeHandler}
-                  ></textarea>
+                  <DoneIcon onClick={() => onDoneEdit()} className="icon" />
                )}
             </div>
-         ))}
+            <div className="right-side-icons">
+               <Colors setColorClass={setColorClass} />
+            </div>
+         </div>
+         <hr />
+         <h2>Note</h2>
+         {!(noteEditItem?.id === note.id) && <p>{note.name}</p>}
+         {noteEditItem?.id === note.id && (
+            <textarea
+               className="text"
+               value={noteEditItem.name}
+               onChange={noteEditItemNameChangeHandler}
+            ></textarea>
+         )}
       </div>
    );
 };

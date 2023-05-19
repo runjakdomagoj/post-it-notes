@@ -10,7 +10,9 @@ const App = () => {
       <div className="app">
          <Form notes={notes} setNotes={setNotes} />
          <div className="notes">
-            <Note notes={notes} setNotes={setNotes} />
+            {notes.map((note) => {
+               return <Note note={note} notes={notes} setNotes={setNotes} />;
+            })}
          </div>
       </div>
    );
